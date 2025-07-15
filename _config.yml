@@ -2,3 +2,7 @@ title:
 description: A space for quiet alignment with thought.
 author: Andreea Bogdanovici
 theme: minima
+collections:
+  pages:
+    output: true
+    permalink: /:title/
