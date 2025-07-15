@@ -1,4 +1,6 @@
 ---
-layout: post
+layout: page
 title: "Writing"
+permalink: /writing/
 ---
+
