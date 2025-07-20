@@ -4,7 +4,7 @@ title: "Background"
 permalink: /background/
 ---
 
-# 
+# 000
 – Writing + research & no allegiance  
 – Python, ML/DL – code, inference, systems  
 – Law degree (LL.B.) and Master of Laws (LL.M.) – AI, BigData/data_asymmetry, digital rights  
