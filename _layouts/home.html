@@ -44,24 +44,28 @@
       }
 
       .post-list li {
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
       }
 
       .post-title {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         font-weight: 600;
         color: #000;
         text-decoration: none;
-      }
-
-      .post-title:hover {
-        text-decoration: underline;
+        margin-top: 1rem;
       }
 
       .post-date {
         font-size: 0.9rem;
         color: #888;
       }
+
+      .post-content {
+        margin-top: 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
       nav {
         margin-bottom: 2.5rem;
       }
@@ -69,11 +73,12 @@
   </head>
   <body>
     <nav style="margin-bottom:2rem;">
-  <a href="/" style="margin-right:1rem; font-weight:600; color:#000; text-decoration:none;">Home</a>
-  <a href="/projects/" style="margin-right:1rem; font-weight:600; color:#000; text-decoration:none;">Projects</a>
-  <a href="/writing/" style="margin-right:1rem; font-weight:600; color:#000; text-decoration:none;">Writing</a>
-  <a href="/background/" style="font-weight:600; color:#000; text-decoration:none;">Background</a>
-</nav>
+      <a href="/" style="margin-right:1rem; font-weight:600; color:#000; text-decoration:none;">Home</a>
+      <a href="/projects/" style="margin-right:1rem; font-weight:600; color:#000; text-decoration:none;">Projects</a>
+      <a href="/writing/" style="margin-right:1rem; font-weight:600; color:#000; text-decoration:none;">Writing</a>
+      <a href="/background/" style="font-weight:600; color:#000; text-decoration:none;">Background</a>
+    </nav>
+
     <div class="content-wrapper">
       <div class="main-content">
         <h1>{{ page.title }}</h1>
@@ -86,20 +91,21 @@
           {% for post in site.posts %}
             <li>
               <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
-              <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
+              <div class="post-title">{{ post.title }}</div>
+              <div class="post-content">{{ post.content }}</div>
             </li>
           {% endfor %}
         </ul>
       </div>
 
       <aside class="sidebar">
-  <p style="text-align:center; margin-top: 12px;">
-    <a href="https://andreeabogdanovici.substack.com" 
-       style="background:#000; color:#fff; padding:10px 20px; text-decoration:none; border-radius:4px; font-family:sans-serif; font-size:14px; display:inline-block;">
-       (my_substack)
-    </a>
-  </p>
-</aside>
+        <p style="text-align:center; margin-top: 12px;">
+          <a href="https://andreeabogdanovici.substack.com" 
+             style="background:#000; color:#fff; padding:10px 20px; text-decoration:none; border-radius:4px; font-family:sans-serif; font-size:14px; display:inline-block;">
+             (my_substack)
+          </a>
+        </p>
+      </aside>
     </div>
   </body>
 </html>
