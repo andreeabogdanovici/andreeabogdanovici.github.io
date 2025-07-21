@@ -3,5 +3,6 @@ layout: page
 title: "Writing"
 permalink: /writing/
 ---
-# work in progress  
+// work in progress  
 (i take my time / not your timeline)
+
