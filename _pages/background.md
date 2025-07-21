@@ -5,10 +5,13 @@ permalink: /background/
 ---
 
 # #001
-Writing + research & no allegiance  
 
-Python, ML/DL – code, inference, systems
+writing + research & no allegiance
 
-Law degree (LL.B.) and Master of Laws (LL.M.) – AI, BigData/data_asymmetry, digital rights  
+& behavioral inference, constraint-tuned architectures, and the parts no one benchmarks.  
 
-Bucharest, Romania (Eastern Europe)
+python, ML/DL – code, inference, systems
+
+law degree (LL.B.) and master of laws (LL.M.) – AI, bigdata/data_asymmetry, digital rights  
+
+=>..>>>>.Bucharest, Romania (Eastern Europe)
