@@ -3,8 +3,6 @@ layout: page
 title: "llllllllllll"
 permalink: /llllllllllll/
 ---
-# ugh
-
 cut  
 shift  
 scrap  
