@@ -13,5 +13,6 @@ writing + research & no allegiance
 python, ML/DL – code, inference, systems
 
 law degree (LL.B.) and master of laws (LL.M.) – AI, bigdata/data_asymmetry, digital rights  
+((+ lit. studies)
 
 =>..>>>>.Bucharest, Romania (Eastern Europe)
