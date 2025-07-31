@@ -6,13 +6,21 @@ permalink: /background/
 
 # #001
 
-writing + research & no allegiance
+mostly breaking transformer models to see what happens
 
-& behavioral inference, constraint-tuned architectures, and the parts no one benchmarks.  
+& (experimenting with architectures, scaling, and other bad ideas)
 
-python, ML/DL – code, inference, systems
+& documenting what happens when you argue with transformers (and transformers fight back)
+
+& (and my mistakes in HD) (and the occasional existential crisis)
+
+& graphs, glitches & occasional proofs that chaos has patterns
+
+now it’s a rabbit hole
+
+[python, ML/DL – code, inference, systems
 
 law degree (LL.B.) and master of laws (LL.M.) – AI, bigdata/data_asymmetry, digital rights  
 ((+ lit. studies)
 
-=>..>>>>.Bucharest, Romania (Eastern Europe)
+=>..>>>>.Bucharest, Romania (Eastern Europe)]
