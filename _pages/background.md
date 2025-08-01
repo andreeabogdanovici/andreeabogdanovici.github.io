@@ -12,13 +12,18 @@ mostly breaking transformer models to see what happens
 
 & documenting what happens when you argue with transformers (and transformers fight back)
 
-& (and my mistakes in HD) (and the occasional existential crisis)
+& (and my mistakes in HD) / (and the occasional existential crisis)
 
 & graphs, glitches & occasional proofs that chaos has patterns
 
 now it’s a rabbit hole
 
-[python, ML/DL – code, inference, systems
+
+
+
+[if curiosity breaks the stack
+
+the usual obvsly python, ML/DL & 
 
 law degree (LL.B.) and master of laws (LL.M.) – AI, bigdata/data_asymmetry, digital rights  
 ((+ lit. studies)
