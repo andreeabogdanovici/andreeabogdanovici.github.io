@@ -4,7 +4,7 @@ title: "Background"
 permalink: /background/
 ---
 
-# #001
+# # lllllllllllllll00%
 
 mostly breaking transformer models to see what happens
 
