@@ -23,7 +23,7 @@ now it’s a rabbit hole
 
 [if curiosity breaks the stack
 
-the usual obvsly python, ML/DL & 
+the usual obvsly py, ml/dl & 
 
 law degree (LL.B.) and master of laws (LL.M.) – AI, bigdata/data_asymmetry, digital rights  
 ((+ lit. studies)
