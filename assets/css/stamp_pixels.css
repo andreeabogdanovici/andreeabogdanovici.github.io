@@ -1,0 +1,12 @@
+/* generated from assets/timbru.png */
+.stamp-pixels { display: grid; grid-template-columns: repeat(42, 1fr); grid-template-rows: repeat(80, 1fr); width: 100%; height: 100%; }
+.stamp-pixels .px { width: 100%; height: 100%; }
+.stamp-pixels .p0 { background: #3d536a; }
+.stamp-pixels .p1 { background: #466787; }
+.stamp-pixels .p2 { background: #606e76; }
+.stamp-pixels .p3 { background: #5f7c93; }
+.stamp-pixels .p4 { background: #7f898d; }
+.stamp-pixels .p5 { background: #708da3; }
+.stamp-pixels .p6 { background: #8aa1af; }
+.stamp-pixels .p7 { background: #afb3b1; }
+.stamp-pixels .p8 { background: #d0cac1; }

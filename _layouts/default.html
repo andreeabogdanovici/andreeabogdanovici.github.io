@@ -7,6 +7,7 @@
     <title>{% if page.title %}{{ page.title | escape }} · {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
     <link rel='stylesheet' href='{{ '/assets/css/site.css' | relative_url }}'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap'>
+    <link rel='stylesheet' href='{{ '/assets/css/stamp_pixels.css' | relative_url }}'>
   </head>
 
   <body>
@@ -21,29 +22,7 @@
         <div class='postmark'></div>
         <div class='stamp-perf'></div>
         <div class='stamp-scene'>
-          <div class='scene bg'></div>
-          <div class='scene frame'></div>
-
-          <div class='plate plate-top'>
-            <div class='plate-text'>ROMANIA</div>
-          </div>
-
-          <div class='medallion'></div>
-          <div class='portrait p1'></div>
-          <div class='portrait p2'></div>
-          <div class='portrait p3'></div>
-          <div class='portrait p4'></div>
-          <div class='portrait p5'></div>
-          <div class='portrait p6'></div>
-
-          <div class='panel'></div>
-          <div class='value lei-left'>LEI</div>
-          <div class='value lei-right'>LEI</div>
-          <div class='value number'>2</div>
-
-          <div class='plate plate-bottom'>
-            <div class='plate-text'>TIMBRU FISCAL</div>
-          </div>
+          {% include stamp_pixels.html %}
         </div>
       </div>
     </div>
