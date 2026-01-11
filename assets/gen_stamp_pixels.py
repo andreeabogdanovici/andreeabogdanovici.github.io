@@ -195,7 +195,7 @@ def main():
   print('HTML_START')
   parts = []
   for i in idx:
-    parts.append(f'<i class=\"px p{i}\"></i>')
+    parts.append(f"<i class='px p{i}'></i>")
   print(''.join(parts))
   print('HTML_END')
 

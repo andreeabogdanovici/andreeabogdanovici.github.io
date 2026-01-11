@@ -1,0 +1,17 @@
+/* generated from assets/carte_postala.png */
+.postcard-pixels { display: grid; grid-template-columns: repeat(140, 1fr); grid-template-rows: repeat(90, 1fr); width: 100%; height: 100%; }
+.postcard-pixels .px { width: 100%; height: 100%; }
+.postcard-pixels .p0 { background: #6f8667; }
+.postcard-pixels .p1 { background: #9ba082; }
+.postcard-pixels .p2 { background: #baa98e; }
+.postcard-pixels .p3 { background: #dead80; }
+.postcard-pixels .p4 { background: #ceb59a; }
+.postcard-pixels .p5 { background: #deb58f; }
+.postcard-pixels .p6 { background: #ddbb9c; }
+.postcard-pixels .p7 { background: #dabca2; }
+.postcard-pixels .p8 { background: #d5bfa7; }
+.postcard-pixels .p9 { background: #dbbfa5; }
+.postcard-pixels .p10 { background: #debfa3; }
+.postcard-pixels .p11 { background: #dec1a7; }
+.postcard-pixels .p12 { background: #e0c4aa; }
+.postcard-pixels .p13 { background: #f2ede7; }
