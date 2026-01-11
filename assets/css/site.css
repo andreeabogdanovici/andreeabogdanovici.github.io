@@ -136,6 +136,9 @@ a:focus-visible {
   font-weight: 700;
   line-height: 1;
   opacity: 0.92;
+  white-space: nowrap;
+  word-break: keep-all;
+  hyphens: none;
 }
 
 .spine-post {
@@ -149,6 +152,89 @@ a:focus-visible {
 
 .spine::selection {
   background: rgba(31, 77, 255, 0.2);
+}
+
+.stamp {
+  position: fixed;
+  left: 0.85rem;
+  bottom: 0.85rem;
+  width: 140px;
+  height: 180px;
+  opacity: 0.92;
+  transform: rotate(-2deg);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.stamp-face {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(35, 35, 35, 0.2);
+  border-radius: 18px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.stamp-face::before {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px dashed rgba(35, 35, 35, 0.22);
+  border-radius: 14px;
+}
+
+.stamp-face::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(35, 35, 35, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 35, 35, 0.06) 1px, transparent 1px);
+  background-size: 18px 18px, 18px 18px;
+  opacity: 0.55;
+}
+
+.stamp-cells {
+  position: absolute;
+  inset: 16px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 8px;
+  z-index: 1;
+}
+
+.cell {
+  border: 1px solid rgba(35, 35, 35, 0.18);
+  border-radius: 14px;
+  background: rgba(35, 35, 35, 0.03);
+}
+
+.cell.c1 { grid-column: 1 / span 4; grid-row: 1 / span 2; background: rgba(31, 77, 255, 0.10); }
+.cell.c2 { grid-column: 5 / span 2; grid-row: 1 / span 3; background: rgba(255, 224, 109, 0.55); }
+.cell.c3 { grid-column: 1 / span 3; grid-row: 3 / span 3; background: rgba(153, 216, 255, 0.55); }
+.cell.c4 { grid-column: 4 / span 3; grid-row: 4 / span 2; border-radius: 999px; background: rgba(255, 170, 204, 0.52); }
+.cell.c5 { grid-column: 1 / span 6; grid-row: 7 / span 2; background: rgba(35, 35, 35, 0.05); }
+.cell.c6 { grid-column: 2 / span 4; grid-row: 9 / span 1; border-radius: 999px; background: rgba(31, 77, 255, 0.14); }
+
+.stamp::before,
+.stamp::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 34px;
+  height: 0;
+  border-top: 2px solid rgba(31, 77, 255, 0.22);
+  transform: rotate(12deg);
+  z-index: 2;
+}
+
+.stamp::after {
+  top: 64px;
+  transform: rotate(12deg);
+  border-top-color: rgba(31, 77, 255, 0.18);
 }
 
 .home-title {
@@ -335,6 +421,13 @@ a:focus-visible {
   font-size: 1rem;
 }
 
+.post-meta-right {
+  text-align: right;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
 .prose a {
   text-decoration: underline;
 }
@@ -436,6 +529,10 @@ a:focus-visible {
   }
 
   .spine {
+    display: none;
+  }
+
+  .stamp {
     display: none;
   }
 

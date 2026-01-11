@@ -12,10 +12,22 @@
   <body>
     {% include nav.html %}
     {% if page.layout == 'post' %}
-      <a class='spine spine-post' href='{{ '/' | relative_url }}' aria-label='Home'>{{ site.title | escape }} · {{ page.date | date: '%Y-%m-%d' }} · {{ page.title | escape }}</a>
+      <a class='spine spine-post' href='{{ '/' | relative_url }}' aria-label='Home'>{{ site.title | escape }} · {{ page.title | escape }}</a>
     {% else %}
       <a class='spine' href='{{ '/' | relative_url }}' aria-label='Home'>{{ site.title | escape }}</a>
     {% endif %}
+    <div class='stamp' aria-hidden='true'>
+      <div class='stamp-face'>
+        <div class='stamp-cells'>
+          <div class='cell c1'></div>
+          <div class='cell c2'></div>
+          <div class='cell c3'></div>
+          <div class='cell c4'></div>
+          <div class='cell c5'></div>
+          <div class='cell c6'></div>
+        </div>
+      </div>
+    </div>
 
     <div class='wrap'>
       <main class='main'>
