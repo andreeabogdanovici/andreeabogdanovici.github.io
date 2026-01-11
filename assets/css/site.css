@@ -280,27 +280,39 @@ a:focus-visible {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
 }
 
 .years a {
-  display: inline-block;
-  color: rgba(35, 35, 35, 0.88);
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(31, 77, 255, 0.9);
   text-decoration: none;
-  border: 1px solid rgba(35, 35, 35, 0.18);
-  padding: 0.35rem 0.55rem;
-  border-radius: 12px;
-  background: rgba(35, 35, 35, 0.04);
+  border: 2px solid rgba(31, 77, 255, 0.42);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  box-shadow: inset 0 0 0 2px rgba(31, 77, 255, 0.12);
 }
 
-.years li:nth-child(4n + 1) a { background: rgba(255, 224, 109, 0.42); }
-.years li:nth-child(4n + 2) a { background: rgba(153, 216, 255, 0.42); }
-.years li:nth-child(4n + 3) a { background: rgba(255, 170, 204, 0.42); }
-.years li:nth-child(4n) a { background: rgba(168, 244, 194, 0.42); }
+.years a::before {
+  content: '';
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  border: 1px dashed rgba(31, 77, 255, 0.32);
+}
 
-.years a:hover { border-color: rgba(35, 35, 35, 0.35); }
+.years a:hover { border-color: rgba(31, 77, 255, 0.62); }
 
 .post-item {
   border: 1px solid var(--border);
@@ -352,6 +364,19 @@ a:focus-visible {
 .prose {
   max-width: 78ch;
   font-size: 1rem;
+}
+
+.post .prose,
+.page .prose {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(35, 35, 35, 0.12);
+  border-radius: 18px;
+  padding: 1.25rem 1.25rem;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.08);
+}
+
+.post .prose {
+  backdrop-filter: blur(4px);
 }
 
 .post-shell {
