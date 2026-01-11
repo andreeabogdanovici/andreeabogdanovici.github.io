@@ -3,6 +3,7 @@ layout: page
 title: 'Background'
 permalink: /background/
 nav_order: 10
+nav: true
 ---
 
 # # lllllllllllllll00%
