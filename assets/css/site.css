@@ -10,6 +10,7 @@
   --shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
   --font-body: 'IBM Plex Mono', 'Courier New', Courier, monospace;
   --pen-blue: #1f4dff;
+  --paper: rgba(247, 241, 228, 0.92);
 }
 
 * {
@@ -200,8 +201,8 @@ a:focus-visible {
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 1rem;
-  background: var(--card);
-  box-shadow: var(--shadow);
+  background: transparent;
+  box-shadow: none;
 }
 
 .index-title {
@@ -368,7 +369,7 @@ a:focus-visible {
 
 .post .prose,
 .page .prose {
-  background: rgba(255, 255, 255, 0.86);
+  background: var(--paper);
   border: 1px solid rgba(35, 35, 35, 0.12);
   border-radius: 18px;
   padding: 1.25rem 1.25rem;
