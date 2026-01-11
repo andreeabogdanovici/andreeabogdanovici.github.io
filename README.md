@@ -1,23 +1,15 @@
 # andreeabogdanovici.github.io
 
-Jekyll blog for GitHub Pages.
+## css grid postcard
 
-## Add a post
+What looks like paper is reconstructed via css grid. 
+Each cell is a pixel. Paper, but computed.
 
-- Create `_posts/YYYY-MM-DD-title.md`
-- Front matter:
-  - `layout: post`
-  - `title: '...'`
+I didn't want to do infinite scroll/feed. 
 
-## Add a page
+I wanted to do a postcard. Posts that occupy space. 
+When they exceed it, they move sideways like fragments, like postcards laid next to each other. 
 
-- Create `_pages/name.md`
-- Front matter:
-  - `layout: page`
-  - `title: '...'`
-  - `permalink: /name/`
-  - `nav_order: 10`
+The page becomes an object.
 
-## Local preview (optional)
-
-- `jekyll serve`
+The DOM is large (I know). If you’re looking for best practices, this is not that:)
