@@ -41,49 +41,38 @@ function wirePaperButtons() {
   const papers = document.querySelectorAll('.paper')
   for (const paper of papers) {
     const content = paper.querySelector('.paper-content')
-    const pages = paper.querySelectorAll('.paper-page')
     const nextButton = paper.querySelector('.paper-next')
     if (!content || !nextButton) continue
 
-    const setDisabled = () => {
-      if (pages.length <= 1) {
+    const updateButton = () => {
+      const pageEls = Array.from(paper.querySelectorAll('.paper-page'))
+      if (pageEls.length <= 1) {
         nextButton.disabled = true
         nextButton.style.display = 'none'
         return
       }
       const maxScroll = content.scrollWidth - content.clientWidth
-      nextButton.disabled = content.scrollLeft >= (maxScroll - 2)
+      nextButton.disabled = content.scrollLeft >= maxScroll - 2
       nextButton.style.display = ''
     }
 
     nextButton.addEventListener('click', () => {
       const pageEls = Array.from(paper.querySelectorAll('.paper-page'))
       if (!pageEls.length) return
-      const contentRect = content.getBoundingClientRect()
+
       const currentLeft = content.scrollLeft
+      const pageWidth = pageEls[0].offsetWidth
 
-      let next = null
-      let nextLeft = null
+      // scroll la urmatoarea pagina
+      const nextPageLeft = Math.ceil(currentLeft / pageWidth) * pageWidth + pageWidth
+      const maxScroll = content.scrollWidth - content.clientWidth
+      const targetLeft = Math.min(nextPageLeft, maxScroll)
 
-      for (const p of pageEls) {
-        const pLeft = (p.getBoundingClientRect().left - contentRect.left) + currentLeft
-        if (pLeft > currentLeft + 4 && (nextLeft === null || pLeft < nextLeft)) {
-          next = p
-          nextLeft = pLeft
-        }
-      }
-
-      if (!next || nextLeft === null) return
-
-      try {
-        content.scrollTo({ left: nextLeft, behavior: 'smooth' })
-      } catch (_) {
-        content.scrollLeft = nextLeft
-      }
+      content.scrollTo({ left: targetLeft, behavior: 'smooth' })
     })
 
-    content.addEventListener('scroll', () => setDisabled(), { passive: true })
-    setDisabled()
+    content.addEventListener('scroll', updateButton, { passive: true })
+    updateButton()
   }
 }
 
