@@ -1,14 +1,15 @@
 function paginatePaperContent(paperContent) {
+  const existingPages = paperContent.querySelector('.paper-pages')
+  if (existingPages) existingPages.remove()
+
   const prose = paperContent.querySelector('.prose')
   if (!prose) return
 
   const sourceHtml = prose.getAttribute('data-source-html') || prose.innerHTML
   prose.setAttribute('data-source-html', sourceHtml)
-  prose.innerHTML = sourceHtml
 
   const pages = document.createElement('div')
   pages.className = 'paper-pages'
-
   prose.replaceWith(pages)
 
   const paperHeight = paperContent.clientHeight

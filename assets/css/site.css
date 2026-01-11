@@ -481,24 +481,8 @@ a:focus-visible {
   padding-top: 5.2rem;
 }
 
-.paper-pages {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 100%;
-  gap: 0;
-  height: 100%;
-  padding: 0;
-}
-
-.paper-page {
-  height: 100%;
-  overflow: hidden;
-  scroll-snap-align: start;
+.paper-content .prose {
   padding: 1.4rem 1.4rem;
-}
-
-.paper-page > * {
-  break-inside: avoid;
 }
 
 .paper-content::-webkit-scrollbar {
@@ -513,6 +497,30 @@ a:focus-visible {
 .paper-content::-webkit-scrollbar-track {
   background: rgba(35, 35, 35, 0.06);
   border-radius: 999px;
+}
+
+.paper-pages {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 72ch;
+  gap: 3.2rem;
+  height: 100%;
+  padding: 0 1.4rem 1.4rem 1.4rem;
+}
+
+.paper-page {
+  height: 100%;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.paper-page.prose {
+  margin: 0;
+  padding: 1.4rem 0;
+}
+
+.paper-page > * {
+  break-inside: avoid;
 }
 
 .post-shell { display: block; }
@@ -669,6 +677,11 @@ a:focus-visible {
   }
 
   .stamp-title { font-size: 17px; }
+
+  .paper-pages {
+    grid-auto-columns: 100%;
+    gap: 1.5rem;
+  }
 
 }
 .page-title,
