@@ -1,7 +1,5 @@
 <header class='top'>
   <div class='top-inner'>
-    <a class='brand' href='{{ '/' | relative_url }}' {% if page.url == '/' %}aria-current='page'{% endif %}>{{ site.title | escape }}</a>
-
     <nav class='links' aria-label='Site'>
       {% assign nav_pages = site.pages | where: 'nav', true %}
       {% assign nav_pages = nav_pages | sort: 'nav_order' %}
