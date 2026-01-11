@@ -1,7 +1,8 @@
 title: Welcome to Organised Chaos
-description: 
+description: A notebook for model breakage and arguments with transformers.
 author: Andreea Bogdanovici
 theme: minima
+lang: en
 collections:
   pages:
     output: true

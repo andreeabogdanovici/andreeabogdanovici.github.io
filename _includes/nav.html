@@ -1,0 +1,12 @@
+<header class='top'>
+  <div class='top-inner'>
+    <a class='brand' href='{{ '/' | relative_url }}' {% if page.url == '/' %}aria-current='page'{% endif %}>{{ site.title | escape }}</a>
+
+    <nav class='links' aria-label='Site'>
+      {% assign nav_docs = site.collections.pages.docs | sort: 'nav_order' %}
+      {% for p in nav_docs %}
+        <a href='{{ p.url | relative_url }}' {% if page.url == p.url %}aria-current='page'{% endif %}>{{ p.title | escape }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

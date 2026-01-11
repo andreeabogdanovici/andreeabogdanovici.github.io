@@ -1,145 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+---
+layout: default
+---
 
-    <style>
-      :root {
-        --bg: #fafafa;
-        --text: #111;
-        --muted: #666;
-        --accent: #000;
-        --border: #e6e6e6;
-      }
+<section class='home'>
+  <header class='home-header'>
+    <h1 class='home-title'>{{ page.title | escape }}</h1>
+    {% if content and content != '' %}
+      <div class='home-intro'>
+        {{ content }}
+      </div>
+    {% endif %}
+  </header>
 
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 3rem;
-        color: var(--text);
-        background: var(--bg);
-        line-height: 1.7;
-      }
-
-      h1 {
-        font-size: 2.4rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        margin-bottom: 2rem;
-      }
-
-      .content-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: minmax(0, 3fr) minmax(260px, 1fr);
-        gap: 4rem;
-      }
-
-      .intro {
-        font-size: 1.15rem;
-        color: var(--muted);
-        margin-bottom: 4rem;
-        max-width: 60ch;
-      }
-
-      .post-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .post-list li {
-        padding-bottom: 3rem;
-        margin-bottom: 3rem;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .post-date {
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--muted);
-      }
-
-      .post-title {
-        font-size: 1.6rem;
-        font-weight: 600;
-        margin-top: 0.5rem;
-      }
-
-      .post-content {
-        margin-top: 1.2rem;
-        font-size: 1rem;
-        max-width: 65ch;
-      }
-
-      aside {
-        position: sticky;
-        top: 3rem;
-        align-self: start;
-      }
-
-      .sidebar a {
-        display: block;
-        text-align: center;
-        background: transparent;
-        color: var(--accent);
-        border: 1px solid var(--accent);
-        padding: 0.8rem 1.2rem;
-        text-decoration: none;
-        font-size: 0.9rem;
-        letter-spacing: 0.05em;
-        transition: all 0.2s ease;
-      }
-
-      .sidebar a:hover {
-        background: var(--accent);
-        color: #fff;
-      }
-
-      @media (max-width: 900px) {
-        body {
-          padding: 2rem 1.5rem;
-        }
-
-        .content-wrapper {
-          grid-template-columns: 1fr;
-        }
-
-        aside {
-          position: static;
-          margin-top: 3rem;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="content-wrapper">
-      <main>
-        <h1>{{ page.title }}</h1>
-
-        <div class="intro">
-          {{ content }}
-        </div>
-
-        <ul class="post-list">
-          {% for post in site.posts %}
-            <li>
-              <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
-              <div class="post-title">{{ post.title }}</div>
-              <div class="post-content">{{ post.content }}</div>
-            </li>
-          {% endfor %}
-        </ul>
-      </main>
-
-      <aside class="sidebar">
-        <a href="">(oh)</a>
-      </aside>
-    </div>
-  </body>
-</html>
+  <ul class='post-list'>
+    {% for post in site.posts %}
+      <li class='post-item'>
+        <div class='post-meta'>{{ post.date | date: '%Y-%m-%d' }}</div>
+        <a class='post-link' href='{{ post.url | relative_url }}'>{{ post.title | escape }}</a>
+        <div class='post-excerpt'>{{ post.excerpt | strip_html | strip_newlines }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
