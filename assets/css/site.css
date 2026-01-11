@@ -156,10 +156,10 @@ a:focus-visible {
 
 .stamp {
   position: fixed;
-  left: 0.85rem;
-  bottom: 0.85rem;
-  width: 126px;
-  height: 240px;
+  right: 1.1rem;
+  top: 5.75rem;
+  width: 120px;
+  aspect-ratio: 60 / 114;
   opacity: 0.92;
   transform: rotate(-2deg);
   pointer-events: none;
@@ -238,7 +238,7 @@ a:focus-visible {
 
 .stamp-scene {
   position: absolute;
-  inset: 14px;
+  inset: 12px;
   border-radius: 12px;
   overflow: hidden;
   z-index: 2;

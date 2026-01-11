@@ -1,12 +1,15 @@
 /* generated from assets/timbru.png */
-.stamp-pixels { display: grid; grid-template-columns: repeat(42, 1fr); grid-template-rows: repeat(80, 1fr); width: 100%; height: 100%; }
+.stamp-pixels { display: grid; grid-template-columns: repeat(60, 1fr); grid-template-rows: repeat(114, 1fr); width: 100%; height: 100%; }
 .stamp-pixels .px { width: 100%; height: 100%; }
-.stamp-pixels .p0 { background: #3d536a; }
-.stamp-pixels .p1 { background: #466787; }
-.stamp-pixels .p2 { background: #606e76; }
-.stamp-pixels .p3 { background: #5f7c93; }
-.stamp-pixels .p4 { background: #7f898d; }
-.stamp-pixels .p5 { background: #708da3; }
-.stamp-pixels .p6 { background: #8aa1af; }
-.stamp-pixels .p7 { background: #afb3b1; }
-.stamp-pixels .p8 { background: #d0cac1; }
+.stamp-pixels .p0 { background: #3e4f60; }
+.stamp-pixels .p1 { background: #3b5979; }
+.stamp-pixels .p2 { background: #4a6985; }
+.stamp-pixels .p3 { background: #636f76; }
+.stamp-pixels .p4 { background: #5a7993; }
+.stamp-pixels .p5 { background: #77868f; }
+.stamp-pixels .p6 { background: #6b8ca3; }
+.stamp-pixels .p7 { background: #819bae; }
+.stamp-pixels .p8 { background: #9a9992; }
+.stamp-pixels .p9 { background: #95abb9; }
+.stamp-pixels .p10 { background: #b5b7b4; }
+.stamp-pixels .p11 { background: #d1ccc4; }
