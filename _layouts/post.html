@@ -3,13 +3,23 @@ layout: default
 ---
 
 <article class='post'>
-  <h1 class='sr-only'>{{ page.title | escape }}</h1>
-  <div class='post-meta-right'>{{ page.date | date: '%Y-%m-%d' }}</div>
-  <div class='prose'>
-    {{ content }}
-  </div>
+  <div class='post-shell'>
+    <div class='post-main'>
+      <h1 class='sr-only'>{{ page.title | escape }}</h1>
+      <div class='prose'>
+        {{ content }}
+      </div>
 
-  <div class='post-nav'>
-    <a href='{{ '/' | relative_url }}'>← home</a>
+      <div class='post-nav'>
+        <a href='{{ '/' | relative_url }}'>← home</a>
+      </div>
+    </div>
+
+    <aside class='post-side' aria-label='Meta'>
+      <div class='meta-card'>
+        <div class='meta-label'>date</div>
+        <div class='meta-value'>{{ page.date | date: '%Y-%m-%d' }}</div>
+      </div>
+    </aside>
   </div>
 </article>
