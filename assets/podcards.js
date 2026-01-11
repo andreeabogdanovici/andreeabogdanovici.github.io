@@ -37,9 +37,48 @@ function paginatePaperContent(paperContent) {
   }
 }
 
+function wirePaperButtons() {
+  const papers = document.querySelectorAll('.paper')
+  for (const paper of papers) {
+    const content = paper.querySelector('.paper-content')
+    const pages = paper.querySelectorAll('.paper-page')
+    const nextButton = paper.querySelector('.paper-next')
+    if (!content || !nextButton) continue
+
+    const setDisabled = () => {
+      if (pages.length <= 1) {
+        nextButton.disabled = true
+        nextButton.style.display = 'none'
+        return
+      }
+      const maxScroll = content.scrollWidth - content.clientWidth
+      nextButton.disabled = content.scrollLeft >= (maxScroll - 2)
+      nextButton.style.display = ''
+    }
+
+    nextButton.addEventListener('click', () => {
+      const pageEls = Array.from(paper.querySelectorAll('.paper-page'))
+      if (!pageEls.length) return
+      let next = null
+      for (const p of pageEls) {
+        if (p.offsetLeft > content.scrollLeft + 2) {
+          next = p
+          break
+        }
+      }
+      if (!next) return
+      content.scrollTo({ left: next.offsetLeft, behavior: 'smooth' })
+    })
+
+    content.addEventListener('scroll', () => setDisabled(), { passive: true })
+    setDisabled()
+  }
+}
+
 function paginatePodcards() {
   const contents = document.querySelectorAll('.paper-content')
   for (const paperContent of contents) paginatePaperContent(paperContent)
+  wirePaperButtons()
 }
 
 let resizeTimer = null

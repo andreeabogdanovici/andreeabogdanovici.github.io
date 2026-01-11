@@ -14,6 +14,9 @@ layout: default
           <div class='stamp-date'>{{ page.date | date: '%Y-%m-%d' }}</div>
           <div class='stamp-title'>{{ page.title | escape }}</div>
         </div>
+        <div class='paper-controls' aria-label='Continue'>
+          <button class='paper-next' type='button'>more →</button>
+        </div>
         <div class='paper-content'>
           <div class='prose'>
             {{ content }}
