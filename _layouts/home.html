@@ -2,48 +2,54 @@
 layout: default
 ---
 
-<section class='home'>
-  <div class='home-grid'>
-    <div>
-      <div class='archive-main' aria-label='Archive'>
+<section class='archive-shell' aria-label='Archive'>
+  <div class='archive-timeline' aria-label='Posts'>
+    {% assign current_year = '' %}
+    {% for post in site.posts %}
+      {% assign y = post.date | date: '%Y' %}
+      {% if y != current_year %}
+        {% unless forloop.first %}</ul></details>{% endunless %}
+        {% if current_year == '' %}
+          {% assign current_year = y %}
+          <details class='archive-year' open>
+        {% else %}
+          {% assign current_year = y %}
+          <details class='archive-year'>
+        {% endif %}
+          <summary class='archive-year-title' id='year-{{ current_year }}'>{{ current_year }}</summary>
+          <ul class='archive-posts'>
+      {% endif %}
+            <li class='archive-post'>
+              <span class='archive-date'>{{ post.date | date: '%b %Y' }}</span>
+              <a class='archive-link' href='{{ post.url | relative_url }}'>{{ post.title | escape }}</a>
+            </li>
+    {% endfor %}
+    {% if site.posts.size > 0 %}</ul></details>{% endif %}
+  </div>
+
+  <aside class='archive-index' aria-label='Years'>
+    <div class='artboard' aria-hidden='true'>
+      <div class='tile t1'></div>
+      <div class='tile t2'></div>
+      <div class='tile t3'></div>
+      <div class='tile t4'></div>
+      <div class='tile t5'></div>
+      <div class='tile t6'></div>
+      <div class='tile t7'></div>
+      <div class='tile t8'></div>
+    </div>
+    <div class='index-card'>
+      <div class='index-title'>years</div>
+      <ul class='years'>
         {% assign current_year = '' %}
         {% for post in site.posts %}
           {% assign y = post.date | date: '%Y' %}
           {% if y != current_year %}
-            {% unless forloop.first %}</ul></details>{% endunless %}
-            {% if current_year == '' %}
-              {% assign current_year = y %}
-              <details class='archive-year' open>
-            {% else %}
-              {% assign current_year = y %}
-              <details class='archive-year'>
-            {% endif %}
-              <summary class='archive-year-title' id='year-{{ current_year }}'>{{ current_year }}</summary>
-              <ul class='archive-posts'>
+            {% assign current_year = y %}
+            <li><a href='#year-{{ y }}'>{{ y }}</a></li>
           {% endif %}
-                  <li class='archive-post'>
-                    <span class='archive-date'>{{ post.date | date: '%Y-%m' }}</span>
-                    <a class='archive-link' href='{{ post.url | relative_url }}'>{{ post.title | escape }}</a>
-                  </li>
         {% endfor %}
-        {% if site.posts.size > 0 %}</ul></details>{% endif %}
-      </div>
+      </ul>
     </div>
-
-    <aside class='sidebar' aria-label='Archive index'>
-      <div class='sidebar-card'>
-        <div class='sidebar-title'>years</div>
-        <ul class='years'>
-          {% assign current_year = '' %}
-          {% for post in site.posts %}
-            {% assign y = post.date | date: '%Y' %}
-            {% if y != current_year %}
-              {% assign current_year = y %}
-              <li><a href='#year-{{ y }}'>{{ y }}</a></li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
-    </aside>
-  </div>
+  </aside>
 </section>
