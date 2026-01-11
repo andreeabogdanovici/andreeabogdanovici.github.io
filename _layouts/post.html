@@ -6,8 +6,15 @@ layout: default
   <div class='post-shell'>
     <div class='post-main'>
       <h1 class='sr-only'>{{ page.title | escape }}</h1>
-      <div class='prose'>
-        {{ content }}
+      <div class='paper'>
+        <div class='paper-bg' aria-hidden='true'>
+          {% include body_pixels.html %}
+        </div>
+        <div class='paper-content'>
+          <div class='prose'>
+            {{ content }}
+          </div>
+        </div>
       </div>
 
       <div class='post-nav'>

@@ -1,0 +1,19 @@
+/* generated from assets/body.png */
+.body-pixels { display: grid; grid-template-columns: repeat(160, 1fr); grid-template-rows: repeat(104, 1fr); width: 100%; height: 100%; }
+.body-pixels .px { width: 100%; height: 100%; }
+.body-pixels .p0 { background: #958273; }
+.body-pixels .p1 { background: #d8b99d; }
+.body-pixels .p2 { background: #dcbb9e; }
+.body-pixels .p3 { background: #dabca1; }
+.body-pixels .p4 { background: #ddbda2; }
+.body-pixels .p5 { background: #dbbea3; }
+.body-pixels .p6 { background: #dcbfa5; }
+.body-pixels .p7 { background: #dfbfa4; }
+.body-pixels .p8 { background: #dcc1a7; }
+.body-pixels .p9 { background: #ddc1a6; }
+.body-pixels .p10 { background: #e0c1a6; }
+.body-pixels .p11 { background: #dec2a7; }
+.body-pixels .p12 { background: #dec3a9; }
+.body-pixels .p13 { background: #e0c4a9; }
+.body-pixels .p14 { background: #e0c5ab; }
+.body-pixels .p15 { background: #e2c7ad; }
