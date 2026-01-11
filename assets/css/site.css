@@ -395,7 +395,7 @@ a:focus-visible {
   top: 1rem;
   right: 1rem;
   width: 240px;
-  height: 252px;
+  height: 130px;
   pointer-events: none;
   z-index: 2;
 }
@@ -446,16 +446,10 @@ a:focus-visible {
   z-index: 4;
 }
 
-.stamp-blog {
+.stamp-title {
   left: 0;
   top: 0;
   transform: rotate(7deg);
-}
-
-.stamp-title {
-  left: 0;
-  top: 128px;
-  transform: rotate(-6deg);
   font-size: 18px;
   line-height: 1.05;
   letter-spacing: 0.02em;
@@ -463,7 +457,6 @@ a:focus-visible {
   padding: 0 0.6rem;
 }
 
-.stamp-blog::before,
 .stamp-title::before {
   content: '';
   position: absolute;
@@ -659,7 +652,7 @@ a:focus-visible {
 
   .paper-stamps {
     width: 240px;
-    height: 248px;
+    height: 130px;
     top: 0.75rem;
     right: 0.75rem;
   }
