@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --bg: #ffffff;
   --text: #0e0f12;
   --muted: rgba(14, 15, 18, 0.64);
@@ -152,24 +153,32 @@ a:focus-visible {
 }
 
 .archive {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.archive-year-title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.archive-months {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.archive-month-title {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.archive-posts {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0.45rem 0 0 0;
   display: grid;
-  gap: 0.6rem;
-}
-
-.archive-item {
-  display: grid;
-  grid-template-columns: 6.8rem minmax(0, 1fr);
-  gap: 0.65rem;
-  align-items: baseline;
-}
-
-.archive-date {
-  color: var(--muted);
-  font-size: 0.9rem;
-  font-variant-numeric: tabular-nums;
+  gap: 0.35rem;
 }
 
 .archive-link {
