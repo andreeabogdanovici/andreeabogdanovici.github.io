@@ -484,16 +484,17 @@ a:focus-visible {
 .paper-pages {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 68ch;
-  gap: 3.2rem;
+  grid-auto-columns: 100%;
+  gap: 0;
   height: 100%;
-  padding: 1.4rem 1.4rem;
+  padding: 0;
 }
 
 .paper-page {
   height: 100%;
   overflow: hidden;
   scroll-snap-align: start;
+  padding: 1.4rem 1.4rem;
 }
 
 .paper-page > * {

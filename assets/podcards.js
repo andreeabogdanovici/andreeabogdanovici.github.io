@@ -9,6 +9,8 @@ function paginatePaperContent(paperContent) {
   const pages = document.createElement('div')
   pages.className = 'paper-pages'
 
+  prose.replaceWith(pages)
+
   const paperHeight = paperContent.clientHeight
   const createPage = () => {
     const el = document.createElement('div')
@@ -19,7 +21,9 @@ function paginatePaperContent(paperContent) {
   }
 
   let current = createPage()
-  const nodes = Array.from(prose.childNodes)
+  const scratch = document.createElement('div')
+  scratch.innerHTML = sourceHtml
+  const nodes = Array.from(scratch.childNodes)
 
   for (const node of nodes) {
     if (node.nodeType === Node.TEXT_NODE && !node.textContent.trim()) continue
@@ -30,8 +34,6 @@ function paginatePaperContent(paperContent) {
       current.appendChild(node)
     }
   }
-
-  prose.replaceWith(pages)
 }
 
 function paginatePodcards() {
@@ -45,5 +47,4 @@ window.addEventListener('resize', () => {
   resizeTimer = window.setTimeout(() => paginatePodcards(), 150)
 })
 
-document.addEventListener('DOMContentLoaded', () => paginatePodcards())
-
+window.addEventListener('load', () => paginatePodcards())
