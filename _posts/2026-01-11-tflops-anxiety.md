@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'TFLOPS Anxiety (because I definitely needed another one, superb)'
+published: false
 ---
 My brain is kinda analog trained (books, legal treatises, philosophy & blame eastern european culture, where if you can't hold an argument across three levels of recursion without contradicting yourself, you're an idiot). An entire culture that looks at diplomas & asks: 'ok, but what can you actually do?'. That kind of eval of how functional you are in the world:)))
 

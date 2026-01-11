@@ -3,22 +3,40 @@ layout: default
 ---
 
 <section class='home'>
-  <header class='home-header'>
-    <h1 class='home-title'>{{ page.title | escape }}</h1>
-    {% if content and content != '' %}
-      <div class='home-intro'>
-        {{ content }}
-      </div>
-    {% endif %}
-  </header>
+  <div class='home-grid'>
+    <div>
+      <header class='home-header'>
+        <h1 class='home-title'>{{ page.title | escape }}</h1>
+        {% if content and content != '' %}
+          <div class='home-intro'>
+            {{ content }}
+          </div>
+        {% endif %}
+      </header>
 
-  <ul class='post-list'>
-    {% for post in site.posts %}
-      <li class='post-item'>
-        <div class='post-meta'>{{ post.date | date: '%Y-%m-%d' }}</div>
-        <a class='post-link' href='{{ post.url | relative_url }}'>{{ post.title | escape }}</a>
-        <div class='post-excerpt'>{{ post.excerpt | strip_html | strip_newlines }}</div>
-      </li>
-    {% endfor %}
-  </ul>
+      <ul class='post-list'>
+        {% for post in site.posts %}
+          <li class='post-item'>
+            <div class='post-meta'>{{ post.date | date: '%Y-%m-%d' }}</div>
+            <a class='post-link' href='{{ post.url | relative_url }}'>{{ post.title | escape }}</a>
+            <div class='post-excerpt'>{{ post.excerpt | strip_html | strip_newlines }}</div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <aside class='sidebar' aria-label='Archive'>
+      <div class='sidebar-card'>
+        <div class='sidebar-title'>archive</div>
+        <ul class='archive'>
+          {% for post in site.posts %}
+            <li class='archive-item'>
+              <span class='archive-date'>{{ post.date | date: '%Y-%m-%d' }}</span>
+              <a class='archive-link' href='{{ post.url | relative_url }}'>{{ post.title | escape }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </aside>
+  </div>
 </section>
