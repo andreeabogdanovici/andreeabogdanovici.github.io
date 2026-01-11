@@ -390,6 +390,10 @@ a:focus-visible {
   opacity: 0.95;
 }
 
+.paper-bg::after {
+  content: none;
+}
+
 .paper-stamps {
   position: absolute;
   top: 1rem;
@@ -477,16 +481,22 @@ a:focus-visible {
   padding-top: 5.2rem;
 }
 
-.paper-content .prose {
+.paper-pages {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 68ch;
+  gap: 3.2rem;
+  height: 100%;
   padding: 1.4rem 1.4rem;
-  columns: 1;
-  column-width: 66ch;
-  column-gap: 3.2rem;
-  column-fill: auto;
-  hyphens: auto;
 }
 
-.paper-content .prose > * {
+.paper-page {
+  height: 100%;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.paper-page > * {
   break-inside: avoid;
 }
 

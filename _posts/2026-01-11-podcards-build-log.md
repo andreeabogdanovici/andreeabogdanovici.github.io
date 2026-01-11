@@ -19,7 +19,7 @@ like old paper + ink.
 
 ## why this way (and not the easy way)
 
-### 1) the background isn’t an image, it’s material
+### 1) the background it’s material
 
  a grid of cells. pixelation makes it an object. 
  it reads as printed.
