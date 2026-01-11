@@ -59,15 +59,27 @@ function wirePaperButtons() {
     nextButton.addEventListener('click', () => {
       const pageEls = Array.from(paper.querySelectorAll('.paper-page'))
       if (!pageEls.length) return
+      const contentRect = content.getBoundingClientRect()
+      const currentLeft = content.scrollLeft
+
       let next = null
+      let nextLeft = null
+
       for (const p of pageEls) {
-        if (p.offsetLeft > content.scrollLeft + 2) {
+        const pLeft = (p.getBoundingClientRect().left - contentRect.left) + currentLeft
+        if (pLeft > currentLeft + 4 && (nextLeft === null || pLeft < nextLeft)) {
           next = p
-          break
+          nextLeft = pLeft
         }
       }
-      if (!next) return
-      content.scrollTo({ left: next.offsetLeft, behavior: 'smooth' })
+
+      if (!next || nextLeft === null) return
+
+      try {
+        content.scrollTo({ left: nextLeft, behavior: 'smooth' })
+      } catch (_) {
+        content.scrollLeft = nextLeft
+      }
     })
 
     content.addEventListener('scroll', () => setDisabled(), { passive: true })
