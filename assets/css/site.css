@@ -394,8 +394,8 @@ a:focus-visible {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 320px;
-  height: 120px;
+  width: 240px;
+  height: 252px;
   pointer-events: none;
   z-index: 2;
 }
@@ -429,11 +429,15 @@ a:focus-visible {
 .stamp-blog,
 .stamp-title {
   position: absolute;
-  right: 90px;
-  top: 10px;
-  padding: 0.45rem 0.7rem;
+  width: 112px;
+  height: 112px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 0;
   border: 2px solid rgba(31, 77, 255, 0.42);
-  border-radius: 14px;
+  border-radius: 999px;
+  background: transparent;
   color: rgba(31, 77, 255, 0.9);
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -443,18 +447,30 @@ a:focus-visible {
 }
 
 .stamp-blog {
-  transform: rotate(6deg);
+  left: 0;
   top: 0;
+  transform: rotate(7deg);
 }
 
 .stamp-title {
-  top: 70px;
-  right: 82px;
-  transform: rotate(-4deg);
-  max-width: 230px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  left: 0;
+  top: 128px;
+  transform: rotate(-6deg);
+  font-size: 18px;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  padding: 0 0.6rem;
+}
+
+.stamp-blog::before,
+.stamp-title::before {
+  content: '';
+  position: absolute;
+  width: 86px;
+  height: 86px;
+  border-radius: 999px;
+  border: 1px dashed rgba(31, 77, 255, 0.32);
 }
 
 .paper-content {
@@ -642,15 +658,13 @@ a:focus-visible {
   }
 
   .paper-stamps {
-    width: 280px;
-    height: 116px;
+    width: 240px;
+    height: 248px;
     top: 0.75rem;
     right: 0.75rem;
   }
 
-  .stamp-title {
-    max-width: 200px;
-  }
+  .stamp-title { font-size: 17px; }
 
 }
 .page-title,
