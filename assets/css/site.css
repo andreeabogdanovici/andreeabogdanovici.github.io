@@ -1,13 +1,15 @@
 :root {
   color-scheme: light;
   --bg: #ffffff;
-  --text: #0e0f12;
-  --muted: rgba(14, 15, 18, 0.64);
-  --border: rgba(14, 15, 18, 0.12);
+  --text: #232323;
+  --muted: rgba(35, 35, 35, 0.62);
+  --border: rgba(35, 35, 35, 0.14);
   --card: #ffffff;
-  --link: #0e0f12;
-  --code-bg: rgba(14, 15, 18, 0.05);
+  --link: #232323;
+  --code-bg: rgba(35, 35, 35, 0.06);
   --shadow: none;
+  --font-body: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+  --font-title: 'Special Elite', ui-serif, Georgia, serif;
 }
 
 * {
@@ -22,8 +24,9 @@ body {
   margin: 0;
   color: var(--text);
   background: var(--bg);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.7;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -152,33 +155,42 @@ a:focus-visible {
   margin-bottom: 0.9rem;
 }
 
-.archive {
+.archive-main {
   display: grid;
-  gap: 1.1rem;
+  gap: 1rem;
+}
+
+.archive-year {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 0.9rem 1rem;
 }
 
 .archive-year-title {
+  cursor: pointer;
   font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-.archive-months {
-  margin-top: 0.75rem;
-  display: grid;
-  gap: 0.9rem;
-}
-
-.archive-month-title {
-  color: var(--muted);
-  font-size: 0.95rem;
+  list-style: none;
 }
 
 .archive-posts {
   list-style: none;
   padding: 0;
-  margin: 0.45rem 0 0 0;
+  margin: 0.9rem 0 0 0;
   display: grid;
-  gap: 0.35rem;
+  gap: 0.45rem;
+}
+
+.archive-post {
+  display: grid;
+  grid-template-columns: 6.2rem minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: baseline;
+}
+
+.archive-date {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .archive-link {
@@ -187,6 +199,24 @@ a:focus-visible {
 }
 
 .archive-link:hover {
+  text-decoration: underline;
+}
+
+.years {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.years a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.years a:hover {
+  color: var(--text);
   text-decoration: underline;
 }
 
@@ -238,8 +268,18 @@ a:focus-visible {
   letter-spacing: -0.03em;
 }
 
+.post-title {
+  font-family: var(--font-title);
+  letter-spacing: 0;
+}
+
+.archive-year-title {
+  font-family: var(--font-title);
+}
+
 .prose {
-  max-width: 72ch;
+  max-width: 78ch;
+  font-size: 1rem;
 }
 
 .prose p {
@@ -251,7 +291,7 @@ a:focus-visible {
 .prose h3 {
   margin: 2rem 0 0.9rem 0;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .prose blockquote {
