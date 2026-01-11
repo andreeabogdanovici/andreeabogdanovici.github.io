@@ -6,75 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
+      :root {
+        --bg: #fafafa;
+        --text: #111;
+        --muted: #666;
+        --accent: #000;
+        --border: #e6e6e6;
+      }
+
       body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        margin: 2rem;
-        color: #111;
-        background: #fff;
+        margin: 0;
+        padding: 3rem;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.7;
       }
 
       h1 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 2rem;
       }
 
       .content-wrapper {
-        display: flex;
-        gap: 2rem;
-        align-items: flex-start;
-      }
-
-      .main-content {
-        flex: 2;
-      }
-
-      .sidebar {
-        flex: 1;
-        min-width: 280px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 3fr) minmax(260px, 1fr);
+        gap: 4rem;
       }
 
       .intro {
-        margin-bottom: 2rem;
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+        color: var(--muted);
+        margin-bottom: 4rem;
+        max-width: 60ch;
       }
 
       .post-list {
         list-style: none;
         padding: 0;
+        margin: 0;
       }
 
       .post-list li {
+        padding-bottom: 3rem;
         margin-bottom: 3rem;
-      }
-
-      .post-title {
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: #000;
-        text-decoration: none;
-        margin-top: 1rem;
+        border-bottom: 1px solid var(--border);
       }
 
       .post-date {
-        font-size: 0.9rem;
-        color: #888;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+
+      .post-title {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-top: 0.5rem;
       }
 
       .post-content {
-        margin-top: 1rem;
+        margin-top: 1.2rem;
         font-size: 1rem;
-        line-height: 1.6;
+        max-width: 65ch;
       }
 
-      nav {
-        margin-bottom: 2.5rem;
+      aside {
+        position: sticky;
+        top: 3rem;
+        align-self: start;
+      }
+
+      .sidebar a {
+        display: block;
+        text-align: center;
+        background: transparent;
+        color: var(--accent);
+        border: 1px solid var(--accent);
+        padding: 0.8rem 1.2rem;
+        text-decoration: none;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        transition: all 0.2s ease;
+      }
+
+      .sidebar a:hover {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      @media (max-width: 900px) {
+        body {
+          padding: 2rem 1.5rem;
+        }
+
+        .content-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        aside {
+          position: static;
+          margin-top: 3rem;
+        }
       }
     </style>
   </head>
-  <body>
 
+  <body>
     <div class="content-wrapper">
-      <div class="main-content">
+      <main>
         <h1>{{ page.title }}</h1>
 
         <div class="intro">
@@ -90,15 +135,10 @@
             </li>
           {% endfor %}
         </ul>
-      </div>
+      </main>
 
       <aside class="sidebar">
-        <p style="text-align:center; margin-top: 12px;">
-          <a href="" 
-             style="background:#000; color:#fff; padding:10px 20px; text-decoration:none; border-radius:4px; font-family:sans-serif; font-size:14px; display:inline-block;">
-             (oh)
-          </a>
-        </p>
+        <a href="">(oh)</a>
       </aside>
     </div>
   </body>
