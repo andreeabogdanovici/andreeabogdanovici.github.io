@@ -11,7 +11,11 @@
 
   <body>
     {% include nav.html %}
-    <a class='spine' href='{{ '/' | relative_url }}' aria-label='Home'>{{ site.title | escape }}</a>
+    {% if page.layout == 'post' %}
+      <a class='spine spine-post' href='{{ '/' | relative_url }}' aria-label='Home'>{{ site.title | escape }} · {{ page.date | date: '%Y-%m-%d' }} · {{ page.title | escape }}</a>
+    {% else %}
+      <a class='spine' href='{{ '/' | relative_url }}' aria-label='Home'>{{ site.title | escape }}</a>
+    {% endif %}
 
     <div class='wrap'>
       <main class='main'>
