@@ -12,7 +12,7 @@ layout: home
   <ul>
     <li>representation learning</li>
     <li>evals before they go stale</li>
-    <li>large models & confident wrong answers</li>
+    <li>models & confident wrong answers</li>
   </ul>
 </section>
 
