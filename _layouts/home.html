@@ -21,7 +21,7 @@ layout: default
       {% for project in site.data.projects %}
       <article class='card'>
         <h3 class='card-title'>{{ project.title | escape }}</h3>
-        <p class='card-desc'>{{ project.desc | escape }}</p>
+        <p class='card-desc'>{{ project.desc | escape | newline_to_br }}</p>
         {% if project.tags.size > 0 %}
         <div class='tags'>
           {% for tag in project.tags %}
