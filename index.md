@@ -10,7 +10,7 @@ layout: home
 <section aria-labelledby='research'>
   <h2 id='research'>Research</h2>
   <ul>
-    <li>what ends up encoded</li>
+    <li>representation learning</li>
     <li>evals before they go stale</li>
     <li>large models & confident wrong answers</li>
   </ul>
