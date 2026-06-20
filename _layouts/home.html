@@ -4,9 +4,8 @@ layout: default
 
 <header class='site-header'>
   <h1>Andreea Bogdanovici</h1>
-  <p class='subtitle'>AI research · projects + repos</p>
-  <p class='interests'>interests: LLMs, interpretability, evaluation · Bucharest, not Budapest</p>
   <nav class='links'>
+    <a href='{{ '/about/' | relative_url }}'>About</a>
     <a href='https://github.com/andreeabogdanovici' target='_blank' rel='noopener noreferrer'>GitHub</a>
     <a href='{{ '/projects/' | relative_url }}'>Projects</a>
   </nav>
@@ -44,21 +43,6 @@ layout: default
       </article>
       {% endfor %}
     </div>
-  </section>
-  {% endif %}
-
-  {% assign published_posts = site.posts | where_exp: 'post', 'post.published != false' %}
-  {% if published_posts.size > 0 %}
-  <section aria-labelledby='writing'>
-    <h2 id='writing'>Publications &amp; Notes</h2>
-    <ul class='pub-list'>
-      {% for post in published_posts %}
-      <li>
-        <a href='{{ post.url | relative_url }}'>{{ post.title | escape }}</a>
-        <span>— {{ post.date | date: '%Y' }}</span>
-      </li>
-      {% endfor %}
-    </ul>
   </section>
   {% endif %}
 </div>
