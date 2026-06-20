@@ -4,6 +4,61 @@ layout: default
 
 <header class='site-header'>
   <h1>Andreea Bogdanovici</h1>
+  <p class='subtitle'>AI research · projects + repos</p>
+  <p class='interests'>interests: LLMs, interpretability, evaluation · Bucharest, not Budapest</p>
+  <nav class='links'>
+    <a href='https://github.com/andreeabogdanovici' target='_blank' rel='noopener noreferrer'>GitHub</a>
+    <a href='{{ '/projects/' | relative_url }}'>Projects</a>
+  </nav>
 </header>
 
-{{ content }}
+<div class='portfolio'>
+  {{ content }}
+
+  {% if site.data.projects.size > 0 %}
+  <section aria-labelledby='projects'>
+    <h2 id='projects'>The messy stuff I do</h2>
+    <div class='grid'>
+      {% for project in site.data.projects %}
+      <article class='card'>
+        <h3 class='card-title'>{{ project.title | escape }}</h3>
+        <p class='card-desc'>{{ project.desc | escape }}</p>
+        {% if project.tags.size > 0 %}
+        <div class='tags'>
+          {% for tag in project.tags %}
+          <span class='tag'>{{ tag | escape }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if project.links.size > 0 %}
+        <div class='card-links'>
+          {% for link in project.links %}
+          {% if link.url contains '://' %}
+          <a href='{{ link.url }}' target='_blank' rel='noopener noreferrer'>{{ link.label | escape }}</a>
+          {% else %}
+          <a href='{{ link.url | relative_url }}'>{{ link.label | escape }}</a>
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% assign published_posts = site.posts | where_exp: 'post', 'post.published != false' %}
+  {% if published_posts.size > 0 %}
+  <section aria-labelledby='writing'>
+    <h2 id='writing'>Publications &amp; Notes</h2>
+    <ul class='pub-list'>
+      {% for post in published_posts %}
+      <li>
+        <a href='{{ post.url | relative_url }}'>{{ post.title | escape }}</a>
+        <span>— {{ post.date | date: '%Y' }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</div>
