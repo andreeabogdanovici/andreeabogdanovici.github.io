@@ -1,15 +1,11 @@
 # andreeabogdanovici.github.io
 
-## css grid postcard
+my site.
 
-What looks like paper is reconstructed via css grid. 
-Each cell is a pixel. Paper, but computed.
+had a whole postcard phase, css grid pixels, paper you scroll sideways, stamps, z-index. the dom was obscene. i liked that it was an object. then i wanted quiet.
 
-I didn't want to do infinite scroll/feed. 
+so now it's white. posts when i write something. same jekyll, one css file, no feed, no nav
 
-I wanted to do a postcard. Posts that occupy space. 
-When they exceed it, they move sideways like fragments, like postcards laid next to each other. 
+best practices, closer, nah, still not that. if you're here for the pixel postcard, ugh, git history. 
 
-The page becomes an object.
-
-The DOM is large (I know). If you’re looking for best practices, this is not that:)
+good luck.

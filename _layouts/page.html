@@ -2,26 +2,14 @@
 layout: default
 ---
 
-<article class='page'>
-  <header class='page-header'>
-    <h1 class='page-title'>{{ page.title | escape }}</h1>
+<article class='entry'>
+  <header class='entry-header'>
+    <h1>{{ page.title | escape }}</h1>
   </header>
 
-  <div class='paper'>
-    <div class='paper-bg' aria-hidden='true'>
-      {% include body_pixels.html %}
-    </div>
-    <div class='paper-controls' aria-label='Continue'>
-      <button class='paper-next' type='button'>more →</button>
-    </div>
-    <div class='paper-content'>
-      <div class='prose'>
-        {{ content }}
-      </div>
-    </div>
+  <div class='prose'>
+    {{ content }}
   </div>
 
-  <div class='post-nav'>
-    <a href='{{ '/' | relative_url }}'>← home</a>
-  </div>
+  <p class='back'><a href='{{ '/' | relative_url }}'>← home</a></p>
 </article>

@@ -2,44 +2,9 @@
 layout: default
 ---
 
-<section class='archive-shell' aria-label='Archive'>
-  <div class='archive-timeline' aria-label='Posts'>
-    {% assign current_year = '' %}
-    {% for post in site.posts %}
-      {% assign y = post.date | date: '%Y' %}
-      {% if y != current_year %}
-        {% unless forloop.first %}</ul></details>{% endunless %}
-        {% if current_year == '' %}
-          {% assign current_year = y %}
-          <details class='archive-year' open>
-        {% else %}
-          {% assign current_year = y %}
-          <details class='archive-year'>
-        {% endif %}
-          <summary class='archive-year-title' id='year-{{ current_year }}'><span class='year-stamp'>{{ current_year }}</span></summary>
-          <ul class='archive-posts'>
-      {% endif %}
-            <li class='archive-post'>
-              <span class='archive-date'>{{ post.date | date: '%b %Y' }}</span>
-              <a class='archive-link' href='{{ post.url | relative_url }}'>{{ post.title | escape }}</a>
-            </li>
-    {% endfor %}
-    {% if site.posts.size > 0 %}</ul></details>{% endif %}
-  </div>
+<header class='site-header'>
+  <h1>Andreea Bogdanovici</h1>
+  <p class='tagline'>AI research. Training models to do what I keep procrastinating on.</p>
+</header>
 
-  <aside class='archive-index' aria-label='Years'>
-    <div class='index-card'>
-      <div class='index-title'>years</div>
-      <ul class='years'>
-        {% assign current_year = '' %}
-        {% for post in site.posts %}
-          {% assign y = post.date | date: '%Y' %}
-          {% if y != current_year %}
-            {% assign current_year = y %}
-            <li><a href='#year-{{ y }}'>{{ y }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-  </aside>
-</section>
+{{ content }}

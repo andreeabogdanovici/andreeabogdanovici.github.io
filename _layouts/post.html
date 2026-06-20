@@ -2,31 +2,17 @@
 layout: default
 ---
 
-<article class='post'>
-  <div class='post-shell'>
-    <div class='post-main'>
-      <h1 class='sr-only'>{{ page.title | escape }}</h1>
-      <div class='paper'>
-        <div class='paper-bg' aria-hidden='true'>
-          {% include body_pixels.html %}
-        </div>
-        <div class='paper-stamps' aria-label='Post stamps'>
-          <div class='stamp-date'>{{ page.date | date: '%Y-%m-%d' }}</div>
-          <div class='stamp-title'>{{ page.title | escape }}</div>
-        </div>
-        <div class='paper-controls' aria-label='Continue'>
-          <button class='paper-next' type='button'>more →</button>
-        </div>
-        <div class='paper-content'>
-          <div class='prose'>
-            {{ content }}
-          </div>
-        </div>
-      </div>
+<article class='entry'>
+  <header class='entry-header'>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.date %}
+      <p class='meta'>{{ page.date | date: '%Y-%m-%d' }}</p>
+    {% endif %}
+  </header>
 
-      <div class='post-nav'>
-        <a href='{{ '/' | relative_url }}'>← home</a>
-      </div>
-    </div>
+  <div class='prose'>
+    {{ content }}
   </div>
+
+  <p class='back'><a href='{{ '/' | relative_url }}'>← home</a></p>
 </article>
