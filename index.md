@@ -21,6 +21,5 @@ layout: home
   <div class='links'>
     <a href='https://github.com' target='_blank' rel='noopener noreferrer'>GitHub</a>
     <a href='https://instagram.com/andreeabogdanovici' target='_blank' rel='noopener noreferrer'>Instagram <span>@andreeabogdanovici</span></a>
-    <a href='mailto:hello@andreeabogdanovici.com'>Email</a>
   </div>
 </section>
