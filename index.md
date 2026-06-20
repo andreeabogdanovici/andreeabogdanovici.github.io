@@ -15,7 +15,6 @@ layout: home
     <li>model behavior</li>
     <li>evals</li>
     <li>'why is this working?'</li>
-</li>
   </ul>
 </section>
 
