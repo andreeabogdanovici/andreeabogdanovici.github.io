@@ -3,16 +3,19 @@ layout: home
 ---
 
 <section aria-labelledby='about'>
-  <h2 id='about'>About</h2>
-  <p>Based in Bucharest. I work on AI research because reality was too underfitted. I like simplicity, models are complicated enough for both of us.</p>
+  <h2 id='about'>About///</h2>
+  <p>Bucharest, not Budapest.</p>
+  <p>AI research. I like to make neural networks do things. Reality was too underfitted.</p>
 </section>
 
 <section aria-labelledby='research'>
-  <h2 id='research'>Research</h2>
+  <h2 id='research'>The messy stuff I do:</h2>
   <ul>
-    <li>representation learning</li>
-    <li>evals before they go stale</li>
-    <li>models & confident wrong answers</li>
+    <li>neural representations</li>
+    <li>model behavior</li>
+    <li>evals</li>
+    <li>'why is this working?'</li>
+</li>
   </ul>
 </section>
 
@@ -20,6 +23,5 @@ layout: home
   <h2 id='links'>Links</h2>
   <div class='links'>
     <a href='https://github.com' target='_blank' rel='noopener noreferrer'>GitHub</a>
-    <a href='https://instagram.com/andreeabogdanovici' target='_blank' rel='noopener noreferrer'>Instagram <span>@andreeabogdanovici</span></a>
   </div>
 </section>
