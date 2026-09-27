@@ -6,6 +6,6 @@ had a whole postcard phase, css grid pixels, paper you scroll sideways, stamps, 
 
 so now it's white. posts when i write something. same jekyll, one css file, no feed, no nav
 
-best practices, closer, nah, still not that. if you're here for the pixel postcard, ugh, git history. 
+best practices, closer, nah, still not that. if you're here for the pixel postcard, ugh, git history.
 
 good luck.
